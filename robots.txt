@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://danila1801.github.io/sitemap.xml

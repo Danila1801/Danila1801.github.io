@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danila Popusoi — Applied AI Engineer</title>
+<meta name="description" content="Applied AI engineer in Amsterdam. Production web apps with LLMs inside them: streaming, retrieval, guardrails, rate limiting, measured evaluation. Six live deployments.">
+<link rel="canonical" href="https://danila1801.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Danila Popusoi — Applied AI Engineer">
+<meta property="og:description" content="Production web apps with LLMs inside them. Retrieval measured at hit@5 100%, MRR 0.964. Six live deployments.">
+<meta property="og:url" content="https://danila1801.github.io/">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Danila Popusoi — Applied AI Engineer">
+<meta name="twitter:description" content="Production web apps with LLMs inside them. Retrieval measured at hit@5 100%, MRR 0.964.">
+
+<meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1113" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230b6e6e'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23faf9f6' text-anchor='middle'>D</text></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Danila Popusoi",
+  "jobTitle": "Applied AI Engineer",
+  "url": "https://danila1801.github.io/",
+  "address": { "@type": "PostalAddress", "addressLocality": "Amsterdam", "addressCountry": "NL" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Vrije Universiteit Amsterdam" },
+  "knowsLanguage": ["English", "Dutch", "Romanian", "Russian"],
+  "knowsAbout": ["Applied AI", "Large Language Models", "Retrieval-Augmented Generation", "TypeScript", "Python", "Next.js", "React", "PostgreSQL", "WebGL"],
+  "sameAs": ["https://github.com/Danila1801"]
+}
+</script>
+
+<style>
+:root{
+  --bg:#faf9f6; --surface:#ffffff; --text:#14181a; --muted:#565f63;
+  --accent:#0b6e6e; --accent-soft:#0b6e6e14; --border:#e4e1d9; --shadow:0 1px 2px #14181a0d;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1113; --surface:#161a1d; --text:#eceff1; --muted:#a2acb1;
+    --accent:#5fd3c4; --accent-soft:#5fd3c41a; --border:#272d31; --shadow:0 1px 2px #0006;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1113; --surface:#161a1d; --text:#eceff1; --muted:#a2acb1;
+  --accent:#5fd3c4; --accent-soft:#5fd3c41a; --border:#272d31; --shadow:0 1px 2px #0006;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:var(--sans); font-size:17px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+
+.wrap{max-width:64rem; margin:0 auto; padding:0 1.5rem}
+a{color:var(--accent); text-underline-offset:.18em; text-decoration-thickness:.06em}
+a:focus-visible,button:focus-visible{outline:2.5px solid var(--accent); outline-offset:3px; border-radius:3px}
+
+.skip{position:absolute; left:-9999px}
+.skip:focus{left:1rem; top:1rem; z-index:99; background:var(--surface); color:var(--text);
+  padding:.6rem 1rem; border:1px solid var(--border); border-radius:6px}
+
+/* ---------- header ---------- */
+.top{display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.5rem 0}
+.mark{font-family:var(--serif); font-size:1.05rem; letter-spacing:.01em; text-decoration:none; color:var(--text)}
+.mark b{color:var(--accent); font-weight:400}
+.themebtn{
+  background:var(--surface); color:var(--muted); border:1px solid var(--border);
+  border-radius:999px; padding:.4rem .85rem; font:inherit; font-size:.82rem; cursor:pointer;
+  display:inline-flex; align-items:center; gap:.4rem;
+}
+.themebtn:hover{color:var(--text); border-color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:3rem 0 3.5rem; border-bottom:1px solid var(--border)}
+h1{font-family:var(--serif); font-weight:400; font-size:clamp(2.3rem,6.5vw,3.9rem);
+  line-height:1.08; letter-spacing:-.015em; margin:0 0 1.1rem}
+.lede{font-size:clamp(1.08rem,2.4vw,1.3rem); line-height:1.5; max-width:34em; margin:0 0 1.1rem; color:var(--text)}
+.sub{color:var(--muted); max-width:38em; margin:0 0 1.9rem}
+.status{display:inline-flex; align-items:center; gap:.55rem; font-size:.87rem; color:var(--muted);
+  background:var(--accent-soft); border:1px solid var(--border); border-radius:999px;
+  padding:.4rem .95rem; margin-bottom:1.6rem}
+.dot{width:.5rem; height:.5rem; border-radius:50%; background:var(--accent); flex:none}
+.cta{display:flex; flex-wrap:wrap; gap:.7rem}
+.btn{display:inline-block; padding:.68rem 1.25rem; border-radius:8px; text-decoration:none;
+  font-size:.94rem; border:1px solid var(--border); background:var(--surface); color:var(--text)}
+.btn:hover{border-color:var(--accent); color:var(--accent)}
+.btn.primary{background:var(--accent); border-color:var(--accent);
+  color:var(--bg); font-weight:500}
+.btn.primary:hover{opacity:.88; color:var(--bg)}
+
+/* ---------- section ---------- */
+section{padding:3.5rem 0; border-bottom:1px solid var(--border)}
+h2{font-family:var(--serif); font-weight:400; font-size:clamp(1.5rem,3.4vw,2rem);
+  letter-spacing:-.01em; margin:0 0 .5rem}
+.sectnote{color:var(--muted); max-width:40em; margin:0 0 2rem}
+
+/* ---------- highlight ---------- */
+.highlight{background:var(--surface); border:1px solid var(--border); border-radius:14px;
+  padding:1.8rem; box-shadow:var(--shadow)}
+.metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(9rem,1fr)); gap:1.2rem; margin:0 0 1.6rem; padding:0; list-style:none}
+.metric dt{font-size:.76rem; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-bottom:.3rem}
+.metric dd{margin:0; font-family:var(--mono); font-size:1.6rem; line-height:1.1; color:var(--accent); font-weight:600}
+.metric dd small{display:block; font-family:var(--sans); font-size:.78rem; font-weight:400; color:var(--muted); margin-top:.3rem; letter-spacing:0}
+.why{margin:0; padding:0; list-style:none; display:grid; gap:1rem}
+.why li{padding-left:1.1rem; border-left:2px solid var(--accent); color:var(--muted); font-size:.95rem}
+.why strong{color:var(--text); font-weight:600}
+
+/* ---------- project grid ---------- */
+.grid{display:grid; gap:1.1rem; grid-template-columns:repeat(auto-fill,minmax(19rem,1fr)); list-style:none; padding:0; margin:0}
+.card{background:var(--surface); border:1px solid var(--border); border-radius:14px;
+  padding:1.4rem; display:flex; flex-direction:column; gap:.75rem; box-shadow:var(--shadow)}
+.card:hover{border-color:var(--accent)}
+.cardtop{display:flex; align-items:flex-start; justify-content:space-between; gap:.75rem}
+.card h3{margin:0; font-size:1.12rem; font-weight:600; letter-spacing:-.01em}
+.card h3 a{color:var(--text); text-decoration:none}
+.card h3 a:hover{color:var(--accent)}
+.motif{flex:none; color:var(--accent); opacity:.85}
+.pitch{margin:0; color:var(--muted); font-size:.93rem; flex:1}
+.big{font-family:var(--mono); font-size:1.02rem; color:var(--accent); font-weight:600; letter-spacing:-.01em}
+.big span{display:block; font-family:var(--sans); font-size:.76rem; font-weight:400; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.2rem}
+.tags{display:flex; flex-wrap:wrap; gap:.35rem; list-style:none; padding:0; margin:0}
+.tags li{font-size:.73rem; color:var(--muted); border:1px solid var(--border);
+  border-radius:5px; padding:.15rem .45rem; font-family:var(--mono)}
+.links{display:flex; gap:1rem; align-items:center; margin-top:.15rem; padding-top:.85rem; border-top:1px solid var(--border)}
+.links a{font-size:.88rem; text-decoration:none; font-weight:500;
+  display:inline-flex; align-items:center; min-height:24px} /* WCAG 2.5.8 target size */
+.links a:hover{text-decoration:underline}
+.links .ghost{color:var(--muted); font-weight:400}
+.links .ghost:hover{color:var(--accent)}
+
+/* ---------- stack ---------- */
+.stack{display:grid; gap:1.6rem; grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.stack h3{margin:0 0 .45rem; font-size:.78rem; text-transform:uppercase; letter-spacing:.07em; color:var(--accent)}
+.stack p{margin:0; color:var(--muted); font-size:.94rem}
+.prose{max-width:38em; color:var(--muted)}
+.prose p{margin:0 0 1rem}
+.prose strong{color:var(--text)}
+
+/* ---------- contact ---------- */
+.contact{display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.5rem}
+footer{padding:2rem 0 3rem; color:var(--muted); font-size:.85rem;
+  display:flex; flex-wrap:wrap; gap:.5rem 1.2rem; justify-content:space-between}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--accent)}
+section:last-of-type{border-bottom:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#main">Danila&nbsp;<b>Popusoi</b></a>
+    <button class="themebtn" id="theme" type="button" aria-live="polite">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <span id="themelabel">Theme</span>
+    </button>
+  </header>
+</div>
+
+<main id="main">
+  <div class="wrap">
+
+    <div class="hero">
+      <p class="status"><span class="dot" aria-hidden="true"></span> Open to applied AI / LLM engineering internships in the Netherlands</p>
+      <h1>I put language models into products that stay up.</h1>
+      <p class="lede">Applied AI engineer in Amsterdam. Six deployments running in production — streaming assistants, retrieval pipelines, guardrails, rate limiting and cost control.</p>
+      <p class="sub">Third-year BSc Artificial Intelligence at VU Amsterdam. I work on the applied side: the parts between a good model and a product that survives contact with real traffic. Everything linked here is live, not a notebook.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See the work</a>
+        <a class="btn" href="https://github.com/Danila1801">GitHub</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <section id="measured">
+      <h2>Retrieval, measured</h2>
+      <p class="sectnote">Most retrieval demos ship without numbers. <a href="https://github.com/Danila1801/kaolin-rag">kaolin-rag</a> has an evaluation harness and reports what it scores.</p>
+      <div class="highlight">
+        <dl class="metrics">
+          <div class="metric"><dt>Retrieval hit@5</dt><dd>100%<small>14 / 14 answerable</small></dd></div>
+          <div class="metric"><dt>Retrieval MRR</dt><dd>0.964<small>mean reciprocal rank</small></dd></div>
+          <div class="metric"><dt>Refusal threshold</dt><dd>0.68<small>measured, not guessed</small></dd></div>
+          <div class="metric"><dt>Golden set</dt><dd>18<small>15 answerable, 3 must refuse</small></dd></div>
+        </dl>
+        <ul class="why">
+          <li><strong>The refusal is structural, not prompted.</strong> Retrieval runs first. If nothing clears the distance threshold the generator is never called at all — so “I don’t know” is guaranteed by control flow, not by asking a model nicely.</li>
+          <li><strong>Asymmetric embeddings, used correctly.</strong> <code>nv-embedqa-e5-v5</code> encodes passages and queries differently. Ingest and query pass the matching input type, and the eval documents the caveat rather than hiding it.</li>
+          <li><strong>A written-up negative result.</strong> The repo records a HyDE implementation that did not improve retrieval, why it didn’t, and why it was removed. Shipping the thing that didn’t work is part of the evidence.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Live work</h2>
+      <p class="sectnote">Six deployments, all reachable right now. Each links to its source.</p>
+      <ul class="grid">
+
+        <li class="card">
+          <div class="cardtop">
+            <h3><a href="https://kaolin-rag.vercel.app">kaolin-rag</a></h3>
+            <svg class="motif" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="M14.5 14.5 21 21"/></svg>
+          </div>
+          <p class="pitch">Retrieval-augmented QA over a real document corpus, with an eval harness, MMR diversification, and a refusal threshold derived from probing the corpus.</p>
+          <p class="big"><span>Measured</span>hit@5 100% · MRR 0.964</p>
+          <ul class="tags"><li>TypeScript</li><li>pgvector</li><li>NVIDIA NIM</li><li>Neon</li></ul>
+          <p class="links"><a href="https://kaolin-rag.vercel.app">Live demo →</a><a class="ghost" href="https://github.com/Danila1801/kaolin-rag">Source</a></p>
+        </li>
+
+        <li class="card">
+          <div class="cardtop">
+            <h3><a href="https://kaolin18.vercel.app">Kaolin</a></h3>
+            <svg class="motif" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2.5 21 7.5v9L12 21.5 3 16.5v-9z"/><path d="M12 12v9.5M12 12l9-4.5M12 12 3 7.5"/></svg>
+          </div>
+          <p class="pitch">Four-language studio site: a live WebGL scene with a day/night cycle, a streaming assistant grounded in the studio’s own documents, and a password-gated admin dashboard with lead capture.</p>
+          <p class="big"><span>Shipped</span>4 locales · live WebGL</p>
+          <ul class="tags"><li>Next.js 16</li><li>three.js/GLSL</li><li>Groq</li><li>Upstash</li></ul>
+          <p class="links"><a href="https://kaolin18.vercel.app">Live demo →</a><a class="ghost" href="https://github.com/Danila1801/Kaolin">Source</a></p>
+        </li>
+
+        <li class="card">
+          <div class="cardtop">
+            <h3><a href="https://portativ-srl.vercel.app">Portativ SRL</a></h3>
+            <svg class="motif" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20V9l8-5.5L20 9v11"/><path d="M9.5 20v-6h5v6"/></svg>
+          </div>
+          <p class="pitch">Bilingual site for a Romanian electrical contractor. Real client work — local SEO and structured data that can’t drift, plus a document assistant that cites its sources or declines to answer.</p>
+          <p class="big"><span>Client work</span>Live in production</p>
+          <ul class="tags"><li>Next.js 15</li><li>JSON-LD</li><li>Neon</li><li>Resend</li></ul>
+          <p class="links"><a href="https://portativ-srl.vercel.app">Live site →</a><a class="ghost" href="https://github.com/Danila1801/PortativSRL">Source</a></p>
+        </li>
+
+        <li class="card">
+          <div class="cardtop">
+            <h3><a href="https://nook-liard.vercel.app">Nook</a></h3>
+            <svg class="motif" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2.5 13c3-5 6.5-5 9.5 0s6.5 5 9.5 0"/><path d="M2.5 18.5c3-5 6.5-5 9.5 0s6.5 5 9.5 0"/></svg>
+          </div>
+          <p class="pitch">Installable wellness PWA. Guided rituals across five categories, a scheduling engine, four locales, offline support and push reminders. No backend, and no gamification by design.</p>
+          <p class="big"><span>Content</span>45 rituals · 4 locales</p>
+          <ul class="tags"><li>React 19</li><li>Vite</li><li>Web Push</li><li>Service Worker</li></ul>
+          <p class="links"><a href="https://nook-liard.vercel.app">Live app →</a><a class="ghost" href="https://github.com/Danila1801/Nook">Source</a></p>
+        </li>
+
+        <li class="card">
+          <div class="cardtop">
+            <h3><a href="https://kaolin-demo-clinic.vercel.app">Demo clinic</a></h3>
+            <svg class="motif" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7.5-4.7-7.5-10A4.5 4.5 0 0 1 12 8a4.5 4.5 0 0 1 7.5 3c0 5.3-7.5 10-7.5 10z"/></svg>
+          </div>
+          <p class="pitch">A clinic intake assistant that is explicit about not diagnosing. Server-side keys, per-IP rate limiting, streaming replies — a constrained assistant built as a sales asset.</p>
+          <p class="big"><span>Guardrails</span>Explicit non-diagnosis</p>
+          <ul class="tags"><li>Next.js 16</li><li>Groq</li><li>Rate limiting</li><li>Streaming</li></ul>
+          <p class="links"><a href="https://kaolin-demo-clinic.vercel.app">Live demo →</a><a class="ghost" href="https://github.com/Danila1801/kaolin-demo-clinic">Source</a></p>
+        </li>
+
+        <li class="card">
+          <div class="cardtop">
+            <h3><a href="https://kaolin-classic.vercel.app">kaolin classic</a></h3>
+            <svg class="motif" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg>
+          </div>
+          <p class="pitch">The same product built again without 3D: lighter, faster, four locales. A deliberate exercise in delivering one brief under a different constraint, so the two can be compared directly.</p>
+          <p class="big"><span>Constraint</span>Same brief, no 3D</p>
+          <ul class="tags"><li>Next.js 16</li><li>next-intl</li><li>Tailwind v4</li><li>Static</li></ul>
+          <p class="links"><a href="https://kaolin-classic.vercel.app">Live site →</a><a class="ghost" href="https://github.com/Danila1801/kaolin_classic">Source</a></p>
+        </li>
+
+      </ul>
+      <p class="sectnote" style="margin:1.6rem 0 0">Also <a href="https://github.com/Danila1801/yt_to_md">yt_to_md</a> — a Python tool that turns YouTube videos and playlists into clean Markdown transcripts formatted as LLM context, with paragraph reconstruction and chapter splitting.</p>
+    </section>
+
+    <section id="about">
+      <h2>How I work</h2>
+      <div class="prose">
+        <p>The interesting problems in applied AI are rarely the model. They are what happens when a public endpoint meets real traffic: <strong>who pays when someone abuses it</strong>, what the system says when it doesn’t know, how you tell whether a change to chunking made retrieval better or just different.</p>
+        <p>So the things I build tend to have a rate limiter before they have a landing page, a refusal path before a happy path, and a number attached before a claim.</p>
+      </div>
+      <div class="stack" style="margin-top:2rem">
+        <div><h3>Languages</h3><p>TypeScript, Python, JavaScript, C#</p></div>
+        <div><h3>Web</h3><p>Next.js App Router, React 19, Tailwind v4, Vite, Node</p></div>
+        <div><h3>LLM engineering</h3><p>OpenAI-compatible SDKs, streaming, retrieval pipelines (pgvector, asymmetric embeddings, MMR), eval harnesses (hit@k, MRR, routing accuracy), threshold-based refusal, prompt-injection hardening, per-IP rate limiting, cost control, provider fallback</p></div>
+        <div><h3>Data &amp; infra</h3><p>Postgres (Neon serverless), pgvector, Redis (Upstash), Vercel, GitHub Actions, HMAC sessions and cookie auth</p></div>
+        <div><h3>Also</h3><p>three.js / WebGL / GLSL, PWAs and service workers, i18n across four locales including Cyrillic and Romanian diacritics, accessibility to WCAG AA</p></div>
+        <div><h3>Spoken</h3><p>English, Dutch, Romanian, Russian</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="sectnote">Amsterdam, and available for hybrid or remote work in the Netherlands. EU student — no sponsorship needed.</p>
+      <div class="contact">
+        <a class="btn primary" href="mailto:d.popusoi@student.vu.nl">d.popusoi@student.vu.nl</a>
+        <a class="btn" href="https://github.com/Danila1801">github.com/Danila1801</a>
+        <a class="btn" href="https://kaolin18.vercel.app">kaolin18.vercel.app</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>© 2026 Danila Popusoi</span>
+    <span>Built as one static file — no framework, no build step, no third-party requests.</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme'), label=document.getElementById('themelabel');
+  var order=['system','light','dark'];
+  function apply(m){
+    if(m==='system'){ root.removeAttribute('data-theme'); } else { root.setAttribute('data-theme',m); }
+    label.textContent = m.charAt(0).toUpperCase()+m.slice(1);
+    btn.setAttribute('aria-label','Colour theme: '+m+'. Click to change.');
+  }
+  var saved='system';
+  try{ saved=localStorage.getItem('theme')||'system'; }catch(e){}
+  if(order.indexOf(saved)<0) saved='system';
+  apply(saved);
+  btn.addEventListener('click',function(){
+    saved=order[(order.indexOf(saved)+1)%order.length];
+    try{ localStorage.setItem('theme',saved); }catch(e){}
+    apply(saved);
+  });
+})();
+</script>
+</body>
+</html>
