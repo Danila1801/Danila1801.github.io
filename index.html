@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Danila Popusoi — Applied AI Engineer</title>
-<meta name="description" content="Applied AI engineer in Amsterdam. Production web apps with LLMs inside them: streaming, retrieval, guardrails, rate limiting, measured evaluation. Six live deployments.">
+<title>Danila Popusoi, Applied AI Engineer</title>
+<meta name="description" content="Applied AI engineer in Amsterdam. Production web apps with LLMs inside them: streaming, retrieval, guardrails, rate limiting, cost control. Six live deployments.">
 <link rel="canonical" href="https://danila1801.github.io/">
 
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Danila Popusoi — Applied AI Engineer">
-<meta property="og:description" content="Production web apps with LLMs inside them. Retrieval measured at hit@5 100%, MRR 0.964. Six live deployments.">
+<meta property="og:title" content="Danila Popusoi, Applied AI Engineer">
+<meta property="og:description" content="Production web apps with LLMs inside them. Six live deployments, all reachable right now.">
 <meta property="og:url" content="https://danila1801.github.io/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Danila Popusoi — Applied AI Engineer">
-<meta name="twitter:description" content="Production web apps with LLMs inside them. Retrieval measured at hit@5 100%, MRR 0.964.">
+<meta name="twitter:title" content="Danila Popusoi, Applied AI Engineer">
+<meta name="twitter:description" content="Production web apps with LLMs inside them. Six live deployments, all reachable right now.">
 
 <meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1113" media="(prefers-color-scheme: dark)">
@@ -106,17 +106,6 @@ h2{font-family:var(--serif); font-weight:400; font-size:clamp(1.5rem,3.4vw,2rem)
   letter-spacing:-.01em; margin:0 0 .5rem}
 .sectnote{color:var(--muted); max-width:40em; margin:0 0 2rem}
 
-/* ---------- highlight ---------- */
-.highlight{background:var(--surface); border:1px solid var(--border); border-radius:14px;
-  padding:1.8rem; box-shadow:var(--shadow)}
-.metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(9rem,1fr)); gap:1.2rem; margin:0 0 1.6rem; padding:0; list-style:none}
-.metric dt{font-size:.76rem; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-bottom:.3rem}
-.metric dd{margin:0; font-family:var(--mono); font-size:1.6rem; line-height:1.1; color:var(--accent); font-weight:600}
-.metric dd small{display:block; font-family:var(--sans); font-size:.78rem; font-weight:400; color:var(--muted); margin-top:.3rem; letter-spacing:0}
-.why{margin:0; padding:0; list-style:none; display:grid; gap:1rem}
-.why li{padding-left:1.1rem; border-left:2px solid var(--accent); color:var(--muted); font-size:.95rem}
-.why strong{color:var(--text); font-weight:600}
-
 /* ---------- project grid ---------- */
 .grid{display:grid; gap:1.1rem; grid-template-columns:repeat(auto-fill,minmax(19rem,1fr)); list-style:none; padding:0; margin:0}
 .card{background:var(--surface); border:1px solid var(--border); border-radius:14px;
@@ -176,32 +165,14 @@ section:last-of-type{border-bottom:none}
     <div class="hero">
       <p class="status"><span class="dot" aria-hidden="true"></span> Open to applied AI / LLM engineering internships in the Netherlands</p>
       <h1>I put language models into products that stay up.</h1>
-      <p class="lede">Applied AI engineer in Amsterdam. Six deployments running in production — streaming assistants, retrieval pipelines, guardrails, rate limiting and cost control.</p>
-      <p class="sub">Third-year BSc Artificial Intelligence at VU Amsterdam. I work on the applied side: the parts between a good model and a product that survives contact with real traffic. Everything linked here is live, not a notebook.</p>
+      <p class="lede">Applied AI engineer in Amsterdam. Six things running in production: streaming assistants, retrieval pipelines, guardrails, rate limiting, cost control.</p>
+      <p class="sub">Third-year BSc Artificial Intelligence at VU Amsterdam. The part I like comes after the model works, when real people start using it and it has to hold. Everything linked here is live, not a notebook.</p>
       <div class="cta">
         <a class="btn primary" href="#work">See the work</a>
         <a class="btn" href="https://github.com/Danila1801">GitHub</a>
         <a class="btn" href="#contact">Contact</a>
       </div>
     </div>
-
-    <section id="measured">
-      <h2>Retrieval, measured</h2>
-      <p class="sectnote">Most retrieval demos ship without numbers. <a href="https://github.com/Danila1801/kaolin-rag">kaolin-rag</a> has an evaluation harness and reports what it scores.</p>
-      <div class="highlight">
-        <dl class="metrics">
-          <div class="metric"><dt>Retrieval hit@5</dt><dd>100%<small>14 / 14 answerable</small></dd></div>
-          <div class="metric"><dt>Retrieval MRR</dt><dd>0.964<small>mean reciprocal rank</small></dd></div>
-          <div class="metric"><dt>Refusal threshold</dt><dd>0.68<small>measured, not guessed</small></dd></div>
-          <div class="metric"><dt>Golden set</dt><dd>18<small>15 answerable, 3 must refuse</small></dd></div>
-        </dl>
-        <ul class="why">
-          <li><strong>The refusal is structural, not prompted.</strong> Retrieval runs first. If nothing clears the distance threshold the generator is never called at all — so “I don’t know” is guaranteed by control flow, not by asking a model nicely.</li>
-          <li><strong>Asymmetric embeddings, used correctly.</strong> <code>nv-embedqa-e5-v5</code> encodes passages and queries differently. Ingest and query pass the matching input type, and the eval documents the caveat rather than hiding it.</li>
-          <li><strong>A written-up negative result.</strong> The repo records a HyDE implementation that did not improve retrieval, why it didn’t, and why it was removed. Shipping the thing that didn’t work is part of the evidence.</li>
-        </ul>
-      </div>
-    </section>
 
     <section id="work">
       <h2>Live work</h2>
@@ -235,7 +206,7 @@ section:last-of-type{border-bottom:none}
             <h3><a href="https://portativ-srl.vercel.app">Portativ SRL</a></h3>
             <svg class="motif" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20V9l8-5.5L20 9v11"/><path d="M9.5 20v-6h5v6"/></svg>
           </div>
-          <p class="pitch">Bilingual site for a Romanian electrical contractor. Real client work — local SEO and structured data that can’t drift, plus a document assistant that cites its sources or declines to answer.</p>
+          <p class="pitch">Bilingual site for a Romanian electrical contractor. Real client work: local SEO and structured data that can’t drift, plus a document assistant that cites its sources or says it doesn’t know.</p>
           <p class="big"><span>Client work</span>Live in production</p>
           <ul class="tags"><li>Next.js 15</li><li>JSON-LD</li><li>Neon</li><li>Resend</li></ul>
           <p class="links"><a href="https://portativ-srl.vercel.app">Live site →</a><a class="ghost" href="https://github.com/Danila1801/PortativSRL">Source</a></p>
@@ -257,7 +228,7 @@ section:last-of-type{border-bottom:none}
             <h3><a href="https://kaolin-demo-clinic.vercel.app">Demo clinic</a></h3>
             <svg class="motif" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7.5-4.7-7.5-10A4.5 4.5 0 0 1 12 8a4.5 4.5 0 0 1 7.5 3c0 5.3-7.5 10-7.5 10z"/></svg>
           </div>
-          <p class="pitch">A clinic intake assistant that is explicit about not diagnosing. Server-side keys, per-IP rate limiting, streaming replies — a constrained assistant built as a sales asset.</p>
+          <p class="pitch">A clinic intake assistant that is upfront about not diagnosing anything. Server-side keys, per-IP rate limiting, streaming replies; deliberately narrow, and built as a sales asset.</p>
           <p class="big"><span>Guardrails</span>Explicit non-diagnosis</p>
           <ul class="tags"><li>Next.js 16</li><li>Groq</li><li>Rate limiting</li><li>Streaming</li></ul>
           <p class="links"><a href="https://kaolin-demo-clinic.vercel.app">Live demo →</a><a class="ghost" href="https://github.com/Danila1801/kaolin-demo-clinic">Source</a></p>
@@ -268,21 +239,21 @@ section:last-of-type{border-bottom:none}
             <h3><a href="https://kaolin-classic.vercel.app">kaolin classic</a></h3>
             <svg class="motif" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg>
           </div>
-          <p class="pitch">The same product built again without 3D: lighter, faster, four locales. A deliberate exercise in delivering one brief under a different constraint, so the two can be compared directly.</p>
+          <p class="pitch">The same product built again without 3D: lighter, faster, four locales. Same brief under a different constraint, so you can put the two side by side.</p>
           <p class="big"><span>Constraint</span>Same brief, no 3D</p>
           <ul class="tags"><li>Next.js 16</li><li>next-intl</li><li>Tailwind v4</li><li>Static</li></ul>
           <p class="links"><a href="https://kaolin-classic.vercel.app">Live site →</a><a class="ghost" href="https://github.com/Danila1801/kaolin_classic">Source</a></p>
         </li>
 
       </ul>
-      <p class="sectnote" style="margin:1.6rem 0 0">Also <a href="https://github.com/Danila1801/yt_to_md">yt_to_md</a> — a Python tool that turns YouTube videos and playlists into clean Markdown transcripts formatted as LLM context, with paragraph reconstruction and chapter splitting.</p>
+      <p class="sectnote" style="margin:1.6rem 0 0">Also <a href="https://github.com/Danila1801/yt_to_md">yt_to_md</a>, a Python tool that turns YouTube videos and playlists into clean Markdown transcripts formatted as LLM context, with paragraph reconstruction and chapter splitting.</p>
     </section>
 
     <section id="about">
       <h2>How I work</h2>
       <div class="prose">
-        <p>The interesting problems in applied AI are rarely the model. They are what happens when a public endpoint meets real traffic: <strong>who pays when someone abuses it</strong>, what the system says when it doesn’t know, how you tell whether a change to chunking made retrieval better or just different.</p>
-        <p>So the things I build tend to have a rate limiter before they have a landing page, a refusal path before a happy path, and a number attached before a claim.</p>
+        <p>The model is rarely the hard part. The hard part starts once the endpoint is public: <strong>who pays when someone abuses it</strong>, what it says when it doesn’t know, and how you tell whether your last change actually helped or just changed something.</p>
+        <p>So I tend to write the rate limiter before the landing page, and the “I don’t know” path before the happy one.</p>
       </div>
       <div class="stack" style="margin-top:2rem">
         <div><h3>Languages</h3><p>TypeScript, Python, JavaScript, C#</p></div>
@@ -296,7 +267,7 @@ section:last-of-type{border-bottom:none}
 
     <section id="contact">
       <h2>Contact</h2>
-      <p class="sectnote">Amsterdam, and available for hybrid or remote work in the Netherlands. EU student — no sponsorship needed.</p>
+      <p class="sectnote">Based in Amsterdam, up for hybrid or remote work anywhere in the Netherlands. EU student, so no sponsorship needed.</p>
       <div class="contact">
         <a class="btn primary" href="mailto:d.popusoi@student.vu.nl">d.popusoi@student.vu.nl</a>
         <a class="btn" href="https://github.com/Danila1801">github.com/Danila1801</a>
@@ -310,7 +281,7 @@ section:last-of-type{border-bottom:none}
 <div class="wrap">
   <footer>
     <span>© 2026 Danila Popusoi</span>
-    <span>Built as one static file — no framework, no build step, no third-party requests.</span>
+    <span>One static file: no framework, no build step, no third-party requests.</span>
   </footer>
 </div>
 
