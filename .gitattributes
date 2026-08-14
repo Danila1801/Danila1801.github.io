@@ -1,6 +1,7 @@
 # The deployed artefacts are served byte-for-byte by GitHub Pages.
 # Pin them to LF so a checkout on Windows can't flip line endings and
 # turn a one-line copy edit into a whole-file diff.
-*.html text eol=lf
-*.xml  text eol=lf
-*.txt  text eol=lf
+*.html         text eol=lf
+*.xml          text eol=lf
+*.txt          text eol=lf
+.gitattributes text eol=lf
